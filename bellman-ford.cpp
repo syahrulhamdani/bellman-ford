@@ -17,12 +17,24 @@ void print_path(int par[], int child);
 int main(){
 
   // Varible declaration
-
+  int option;
 
   // Main program
   cout << "-----------------------------------------------------------" << endl;
   cout << "PROGRAM OF BELLMAN-FORD ALGORITHM FOR SHORTEST PATH PROBLEM" << endl;
   cout << "-----------------------------------------------------------" << endl;
+  cout << endl;
+  cout << "List of data for input: " << endl;
+  cout << "1. Simple 10 vertices graph" << endl;
+  cout << "2. Improved 10 vertices graph with negative weight" << endl;
+  cout << "Your option : ";
+  cin >> option;
+  do {
+    switch (option) {
+      default :
+        cout << "Undefined. Please try again" << endl;
+    }
+  } while(option < 1 or option > 2);
 
   return 0;
 }
