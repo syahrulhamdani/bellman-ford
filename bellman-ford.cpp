@@ -10,7 +10,7 @@ const int vertice = 10;
 float matrix[vertice][vertice];
 
 // Declare function used
-void build_matrix(int size);
+void build_matrix(int size, int data);
 float bellman_ford(int size);
 void print_path(int par[], int child);
 
