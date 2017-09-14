@@ -44,6 +44,48 @@ void build_matrix(int size, int data) {
 
 }
 
+float bellman_ford (int size) {
+
+  // Local varible declaration
+  int i, j, iteration, p[size];
+  float d[size];
+
+  for (i = 0; i < size; i++) {
+    d[i] = 99;    // Assign all distance array from 0 equals 99
+    p[i] = 1;    // Assign all parent equals 0
+  }
+
+  // set distance to source vertice to 0
+  d[i] = 0;
+
+  // Relax graph repeatedly V-1 times
+  for (iteration = 0; iteration < (size - 1); iteration++) {  // Do iteration V-1 times
+    for (i = 0; i < size; i++) {
+      for (j = 0; j < size; j++) {
+        if (matrix[i][j] != 99) {    // check for all possible edges
+          if (d[i] + matrix[i][j] < d[j]) {    // check the minimum of targeted vertice
+            d[j] = d[i] + matrix[i][j];
+            p[j] = i;
+          }
+        }
+      }
+    }
+  }
+
+  // Check for negative-weight cycles
+  for (i = 0; i < size; i++) {
+    for (j = 0; j < size; j++) {
+      if (matrix[i][j] != 99) {  // check for all possible edges
+        if (d[i] + matrix[i][j] < d[j]) {    // check the minimum of targeted vertice
+          d[j] = d[i] + matrix[i][j];
+          p[j] = i;
+        }
+      }
+    }
+  }
+
+}
+
 int main(){
 
   // Varible declaration
@@ -64,6 +106,8 @@ int main(){
 
   // Call build_matrix function
   build_matrix(vertice, option);
+  // Call bellman-ford function
+  bellman_ford(vertice);
 
   return 0;
 }
