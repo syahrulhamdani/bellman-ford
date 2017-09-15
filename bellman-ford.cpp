@@ -84,6 +84,9 @@ float bellman_ford (int size) {
     }
   }
 
+  cout << "Minimum distance to node [" << size-1 << "] : ";
+  cout << d[size-1];
+
 }
 
 int main(){
