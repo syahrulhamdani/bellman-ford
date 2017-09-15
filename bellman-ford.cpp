@@ -56,7 +56,7 @@ float bellman_ford (int size) {
   }
 
   // set distance to source vertice to 0
-  d[i] = 0;
+  d[0] = 0;
 
   // Relax graph repeatedly V-1 times
   for (iteration = 0; iteration < (size - 1); iteration++) {  // Do iteration V-1 times
