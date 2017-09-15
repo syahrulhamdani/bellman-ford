@@ -85,7 +85,30 @@ float bellman_ford (int size) {
   }
 
   cout << "Minimum distance to node [" << size-1 << "] : ";
-  cout << d[size-1];
+  cout << d[size-1] << endl;
+
+  // Call print_path procedure to print the path
+  // The second parameter of the procedure depends on the final target
+  print_path(p, size-1);
+
+}
+
+void print_path (int par[], int child) {
+
+  // Local variable declaration
+  int i, j, parent[vertice], max_parent;
+
+  // Main program
+  i = child;
+  cout << "The shortest path to vertice [" << vertice - 1 << "] : ";
+  cout << "end <- " << child << " <- ";
+  while (i != 0) {
+    cout << par[i] << " <- ";
+    i = par[i];
+    if (i == 0) {
+      cout << "begin";
+    }
+  }
 
 }
 
