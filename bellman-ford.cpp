@@ -39,8 +39,8 @@ void build_matrix(int size, int data) {
     for (j = 0; j < size; j++) {
       graph >> matrix[i][j];
     }
-    cout << endl;
   }
+  cout << endl;
 
 }
 
@@ -109,6 +109,7 @@ void print_path (int par[], int child) {
       cout << "begin";
     }
   }
+  cout << endl;
 
 }
 
