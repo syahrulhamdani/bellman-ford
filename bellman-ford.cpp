@@ -79,6 +79,7 @@ float bellman_ford (int size) {
         if (d[i] + matrix[i][j] < d[j]) {    // check the minimum of targeted vertice
           d[j] = d[i] + matrix[i][j];
           p[j] = i;
+          cout << "Warning! There exist negative cycle(s) in your graph" << endl;
         }
       }
     }
